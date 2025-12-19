@@ -24,9 +24,6 @@ Tras la ejecución de la suite de pruebas, se concluye que:
 2. Los mensajes de error y códigos **400 Bad Request** están alineados con la documentación técnica cuando se ingresan datos fuera de los límites permitidos.
 3. La automatización permite reducir el tiempo de regresión de estas funcionalidades de minutos a solo segundos.
 
-### 🖼️ Evidencia de ejecución
-> **Instrucción para ti:** Aquí debes subir una captura de pantalla de tu terminal con los resultados de Pytest a tu carpeta de GitHub y enlazarla así:
-![Resultado de Pytest](./resultado_tests.png)
 
 ---
 
