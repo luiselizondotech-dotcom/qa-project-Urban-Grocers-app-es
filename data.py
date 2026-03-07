@@ -1,26 +1,28 @@
-
+# data.py
 import copy
 
-
+# --- Datos para crear usuario ---
 user_body = {
-    "firstName": "Juan",
-    "phone": "9998887777",
-    "address": "Calle Falsa 123"
+    "firstName": "Max",
+    "phone": "+10005553535",
+    "address": "8042 Lancaster Ave.Hamburg, NY"
 }
 
-
+# --- Kit base ---
 kit_base_body = {
     "name": "NombreDePrueba"
 }
 
+# --- Valores límite generados programáticamente (siempre exactos) ---
+kit_name_511_chars = "a" * 511
+kit_name_512_chars = "a" * 512
 
-kit_name_511_chars = "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC"
+# --- Validación automática al importar ---
+assert len(kit_name_511_chars) == 511, f"Error: kit_name_511_chars tiene {len(kit_name_511_chars)} caracteres"
+assert len(kit_name_512_chars) == 512, f"Error: kit_name_512_chars tiene {len(kit_name_512_chars)} caracteres"
 
-
-kit_name_512_chars = "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD"
-
-
+# --- Factory function ---
 def get_kit_body(name):
-    current_body = copy.copy(kit_base_body)
+    current_body = copy.deepcopy(kit_base_body)
     current_body["name"] = name
     return current_body
